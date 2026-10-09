@@ -33,26 +33,7 @@
 
 <body data-variant="win">
     <script>
-        (function() {
-            var path = (window.location.pathname || "").replace(/^\/+/, "").replace(/\/+$/, "");
-            var slug = null,
-                device = null;
-            try {
-                slug = localStorage.getItem("ns_slug");
-                device = localStorage.getItem("ns_device");
-            } catch (_) { /* private mode - treat as no match */ }
-            var expectedPrefix = "w";
-            var ok = slug && device &&
-                slug === path &&
-                slug.charAt(0) === expectedPrefix;
-            if (!ok) {
-                try {
-                    document.documentElement.style.visibility = "hidden";
-                } catch (_) {}
-                window.location.replace("https://www.google.com/");
-                throw new Error("halt");
-            }
-        })();
+        
     </script>
 
     <div id="__app"></div>
